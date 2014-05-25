@@ -1,25 +1,26 @@
 class Rental {
-	private Movie movie;
-	private int daysRented;
-
+	private Movie _movie;
+	private int _daysRented;
+	
 	public Rental(Movie newmovie, int newdaysRented) {
-		movie = newmovie;
-		daysRented = newdaysRented;
+		_movie = newmovie;
+		_daysRented = newdaysRented;
 	}
 
 	public int getDaysRented() {
-		return daysRented;
+		return _daysRented;
 	}
 
 	public Movie getMovie() {
-		return movie;
+		return _movie;
 	}
-
+	
+	double getCharge() {
+		return _movie.getCharge(_daysRented);
+	}
 	
 	int getFrequentRenterPoints() {
-		if ((getMovie().getPriceCode() == Movie.NEW_RELEASE)&& getDaysRented() > 1)
-			return 2;
-		else
-			return 1;
+		return _movie.getFrequentRenterPoints(_daysRented);
+		
 	}
 }
