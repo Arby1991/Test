@@ -58,6 +58,6 @@ class Customer {
     				result += (aRental.getDaysRented() - 3) * 1.5;
     			break;
     	}
-    	return result;
+    	return aRental.getCharge();
     }
 }
